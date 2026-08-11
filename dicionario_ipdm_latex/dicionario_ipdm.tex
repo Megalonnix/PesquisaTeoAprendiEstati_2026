@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{booktabs}   % Para linhas de tabela profissionais (\toprule, \midrule, \bottomrule)
+\usepackage{tabularx}   % Para tabelas com ajuste automático de largura de coluna
+\usepackage{geometry}   % Para ajustar as margens da página
+\usepackage{caption}    % Permite remover a numeração com \caption*
+\geometry{a4paper, margin=2.5cm}
+
+\begin{document}
+
+\begin{table}[htbp]
+  \centering
+  \caption*{Dicionário de Dados} % O asterisco (*) remove o número "Tabela 1:"
+  \label{tab:dicionario_dados}
+  \vspace{0.2cm}
+  \begin{tabularx}{\textwidth}{l X X}
+    \toprule
+    \textbf{Nome equivalente no dicionário} & \textbf{Descrição} & \textbf{Fonte} \\
+    \midrule
+    \texttt{cod\_ibge} & Código oficial de 7 dígitos definido pelo IBGE para município. & Instituto Brasileiro de Geografia e Estatística -- IBGE \\
+    \addlinespace
+    \texttt{municipio} & Nome dos municípios do Estado de São Paulo. & Instituto Brasileiro de Geografia e Estatística -- IBGE \\
+    \addlinespace
+    \texttt{ano} & Ano de referência das informações. & Fundação Sistema Estadual de Análise de Dados -- Seade \\
+    \addlinespace
+    \texttt{grupos\_cod} & Código numérico de classificação do grupo do IPDM (nível 1 a 4). & Fundação Sistema Estadual de Análise de Dados -- Seade \\
+    \addlinespace
+    \texttt{grupos} & Descrição qualitativa do grupo do IPDM do município. & Fundação Sistema Estadual de Análise de Dados -- Seade \\
+    \addlinespace
+    \texttt{populacao} & Contagem ou estimativa populacional do município no ano. & Fundação Sistema Estadual de Análise de Dados -- Seade \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\end{document}
