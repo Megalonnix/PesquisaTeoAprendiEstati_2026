@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{utf8}
+\usepackage[margin=2cm]{geometry} % Margens ligeiramente reduzidas para garantir 1 página
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+
+\begin{document}
+
+% --- TÍTULOS CENTRALIZADOS ---
+\begin{center}
+    % Nome da Disciplina em 16pt (bold)
+    {\fontsize{16pt}{20pt}\selectfont \textbf{Teoria do Aprendizado Estatístico / PI 3}}\\[0.3cm]
+    % Nome do Professor em 12pt (bold)
+    {\fontsize{12pt}{15pt}\selectfont \textbf{Professor:} João Paulo Ferreira de Mello}\\[0.2cm]
+    % Nome dos Integrantes em 12pt
+    {\fontsize{12pt}{15pt}\selectfont \textbf{Integrantes:} Ivan Guimarães, Jorge Sugano, Gustavo}\\[0.5cm]
+\end{center}
+
+% --- DESCRIÇÃO DO DATASET (PARÁGRAFO JUSTIFICADO) ---
+\noindent
+\textbf{Descrição do Dataset:} O presente estudo utiliza a base de dados do \textbf{Índice Paulista de Desenvolvimento Municipal (IPDM)}, elaborada pela Fundação Seade. Trata-se de um indicador sintético desenvolvido para avaliar e acompanhar o desempenho socioeconômico dos 645 municípios do Estado de São Paulo em periodicidade bianual (no período de 2014 a 2024). A base mensura as condições municipais por meio de um índice geral e de três dimensões fundamentais: Riqueza, Longevidade e Escolaridade, fornecendo insumos para a análise comparativa da evolução do desenvolvimento humano e econômico no estado.
+
+\vspace{0.4cm}
+
+% --- TABELA DO DICIONÁRIO DE DADOS ---
+\begin{table}[htbp]
+\centering
+\fontsize{10pt}{13pt}\selectfont % Fonte 10pt com entrelinha ajustada
+\renewcommand{\arraystretch}{1.15} % Espaçamento ideal para caber na página
+
+\caption{Dicionário de Dados --- Índices e Indicadores do IPDM (2014--2024)}
+\label{tab:dicionario_ipdm}
+\vspace{0.2cm}
+
+\begin{tabularx}{\textwidth}{>{\ttfamily}l l l X X}
+\toprule
+\rule{0pt}{2.5ex}\textbf{Variável} & \textbf{Tipo} & \textbf{Domínio / Variação} & \textbf{Descrição} & \textbf{Fonte} \\[0.3ex]
+\midrule
+cod\_ibge    & Numérico & [3500105, 3557303]    & Código oficial de 7 dígitos do IBGE para o município & IBGE \\
+municipio   & Texto    & Nomes de municípios   & Nome do município do Estado de São Paulo            & IBGE \\
+valor       & Numérico & [0,000; 1,000]        & Nota/pontuação da cidade no IPDM geral ou na dimensão & Seade \\
+ano         & Numérico & [2014, 2024]          & Ano de referência dos dados (série bianual)          & Seade \\
+tipo        & Texto    & Categórico            & Escopo da linha (Geral, Riqueza, Longevidade ou Escolaridade) & Seade \\
+valor\_estado & Numérico & [0,000; 1,000]        & Pontuação equivalente para o total do Estado de SP  & Seade \\
+indicador1  & Numérico & Variável por dimensão & 1º componente específico da dimensão de análise      & Seade \\
+indicador2  & Numérico & Variável por dimensão & 2º componente específico da dimensão de análise      & Seade \\
+indicador3  & Numérico & Variável por dimensão & 3º componente específico da dimensão de análise      & Seade \\
+indicador4  & Numérico & Variável por dimensão & 4º componente específico da dimensão de análise      & Seade \\
+indicador5  & Texto / Num. & Variável por dimensão & Identificador ou nota do indicador da dimensão       & Seade \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\end{document}
