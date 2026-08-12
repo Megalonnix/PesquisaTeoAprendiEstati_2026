@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{utf8}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+
+% Ajusta a espessura da linha interna (fina) do booktabs
+\setlength{\lightrulewidth}{0.2pt}
+
+\begin{document}
+
+% --- TÍTULOS CENTRALIZADOS ---
+\begin{center}
+    {\fontsize{15pt}{18pt}\selectfont \textbf{Teoria do Aprendizado Estatístico / PI 3}}\\[0.2cm]
+    {\fontsize{11pt}{14pt}\selectfont \textbf{Professor:} João Paulo Ferreira de Mello}\\[0.1cm]
+    {\fontsize{11pt}{14pt}\selectfont \textbf{Integrantes:} Ivan Guimarães, Jorge Sugano, Gustavo}\\[0.3cm]
+\end{center}
+
+% --- DESCRIÇÃO DO DATASET ---
+\noindent
+\fontsize{10pt}{13pt}\selectfont
+\textbf{Descrição do Dataset:} O presente estudo utiliza a base de dados do \textbf{Índice Paulista de Desenvolvimento Municipal (IPDM)}, elaborada pela Fundação Seade. Trata-se de um indicador sintético desenvolvido para avaliar e acompanhar o desempenho socioeconômico dos 645 municípios do Estado de São Paulo em periodicidade bianual (2014--2024). A base mensura as condições municipais por meio de um índice geral e de três dimensões fundamentais: Riqueza, Longevidade e Escolaridade, fornecendo insumos para a análise comparativa da evolução do desenvolvimento humano e econômico no estado. Dicionário de dados segue abaixo:
+
+\vspace{0.25cm}
+
+% --- TABELA DO DICIONÁRIO DE DADOS ---
+\begin{table}[htbp]
+\centering
+\fontsize{8pt}{10.5pt}\selectfont % Tamanho ajustado para acomodar o respiro vertical das linhas
+\renewcommand{\arraystretch}{1.3} % Dá o espaço vertical para as letras não colarem nas linhas
+
+\caption{Dicionário de Dados --- Índices e Indicadores do IPDM (2014--2024)}
+\label{tab:dicionario_ipdm}
+\vspace{0.15cm}
+
+\begin{tabularx}{\textwidth}{>{\ttfamily}l l >{\raggedright\arraybackslash}p{4.8cm} X l}
+\toprule
+\textbf{Variável} & \textbf{Tipo} & \textbf{Domínio / Variação} & \textbf{Descrição} & \textbf{Fonte} \\
+\midrule
+cod\_ibge    & Numérico & [3500105, 3557303] & Código oficial de 7 dígitos do IBGE para o município & IBGE \\
+\midrule
+municipio   & Texto    & Nomes de municípios & Nome do município do Estado de São Paulo & IBGE \\
+\midrule
+valor       & Numérico & [0,000; 1,000] & Nota/pontuação da cidade no IPDM geral ou na dimensão & Seade \\
+\midrule
+ano         & Numérico & [2014, 2024] & Ano de referência dos dados (série bianual) & Seade \\
+\midrule
+tipo        & Texto    & Categórico & Escopo da linha (Geral, Riqueza, Longevidade ou Escolaridade) & Seade \\
+\midrule
+valor\_estado & Numérico & [0,000; 1,000] & Pontuação equivalente para o total do Estado de SP & Seade \\
+\midrule
+indicador1  & Texto / Num. & ["Consumo anual de energia elétrica residencial (MWh) por ligação", "Taxas de mortalidade infantil (por mil nascidos vivos)", "Taxas de atendimento escolar de crianças de 0 a 3 anos (\%)"] & 1º componente específico da dimensão de análise & Seade \\
+\midrule
+indicador2  & Texto / Num. & ["Consumo anual de energia elétrica comercial, serviços e rural (MWh) por ligação", "Taxas de mortalidade perinatal (por mil nascidos vivos)", "Proporção média de alunos do 5º ano com proficiência em Língua Portuguesa e Matemática (\%)"] & 2º componente específico da dimensão de análise & Seade \\
+\midrule
+indicador3  & Texto / Num. & ["Rendimento do trabalho formal mais benefícios previdenciarios per capita (R\$ de 2024)", "Taxas de mortalidade 15 a 39 anos (por mil hab.)", "Proporção média de alunos do 9º ano com proficiência em Língua Portuguesa e Matemática (\%)"] & 3º componente específico da dimensão de análise & Seade \\
+\midrule
+indicador4  & Texto / Num. & ["Produto Interno Bruto per capita (R\$ de 2024)", "Taxas de mortalidade 60 a 69 anos (por mil hab.)", "Taxas de distorção idade-série no Ensino Médio (\%)"] & 4º componente específico da dimensão de análise & Seade \\
+\midrule
+indicador5  & Texto / Num. & ["Indicador Riqueza", "Indicador Longevidade", "Indicador Escolaridade"] & Identificador ou nota do indicador sintético da dimensão & Seade \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\end{document}
