@@ -1,6 +1,6 @@
 # Relatório do Pipeline de Análise – IPDM (Regressão Logística)
 
-- **Link código fonte:** #
+- **Link código fonte:** https://github.com/Megalonnix/PesquisaTeoAprendiEstati_2026/blob/analise_exploratoria/scripts/pesquisa_IPDM/notebook_03__.ipynb
 
 ## 1. Introdução
 
